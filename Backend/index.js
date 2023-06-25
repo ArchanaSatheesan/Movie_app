@@ -3,12 +3,12 @@ const express=require ('express');
 const movieModel = require('./Model/Moviedb');
 const app=new express();
 const cors=require ('cors');
-
 //middleware
 app.use(cors());
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 //api creation
+
 
 //post
 app.post('/addmovies',async(req,res)=>{
@@ -17,13 +17,11 @@ app.post('/addmovies',async(req,res)=>{
     data.save();
     res.send({status:"data saved"})
 })
-
 //view
 app.get('/viewmovies',async(req,res)=>{
     var data=await movieModel.find();
     res.json(data);
 })
-
 app.get('/viewmovies/:id',async(req,res)=>{
     let id=req.params._id;
     var data=await movieModel.findOne(id);
@@ -33,7 +31,6 @@ app.get('/viewmovies/:id',async(req,res)=>{
     res.json(data);
    
 })
-
 //update
 app.put('/edit/:id',async(req,res)=>{
     let id=req.params.id;
@@ -46,6 +43,9 @@ app.put('/edit/:id',async(req,res)=>{
     }
 })
 
+
+
+
 //delete books
 app.delete('/deletemovies/:id',async(req,res)=>{
     console.log("delete")
@@ -56,28 +56,6 @@ app.delete('/deletemovies/:id',async(req,res)=>{
     res.json({status:"deleted"})
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //port
 app.listen(3008,()=>{
     console.log("app running in port 3008");

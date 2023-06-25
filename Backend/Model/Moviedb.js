@@ -3,7 +3,7 @@ mongoose.connect("mongodb+srv://archanasatheesan:archanasatheesan@cluster0.zb7uj
 .then(()=>{
     console.log("db connected")
 })
-.catch(err=>console.log(err))
+.catch((err)=>console.log(err))
 
 let Schema=mongoose.Schema;
 const movieSchema=new Schema({

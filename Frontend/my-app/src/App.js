@@ -12,8 +12,8 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        {/* <Route path='/add' element={<Addbooks data={{BookName:"",author:"",language:"",genre:"",bookNum:""}} method="post"/>}/> */}
-        <Route path='/add' element={<Addmovie/>}/>
+         <Route path='/add' element={<Addmovie data={{MovieName:"",language:"",actor:"",actress:"",director:"",producer:"",camera:"",year:""}} method="post"/>}/> 
+        {/* <Route path='/add' element={<Addmovie/>}/> */}
         <Route path='/contact' element={<Contact/>}/>
 
       </Routes>
